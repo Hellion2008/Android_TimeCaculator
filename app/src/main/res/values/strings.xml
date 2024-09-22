@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TimeCalculator</string>
+    <string name="titleTV">Калькулятор времени</string>
+    <string name="resultTV">Результат</string>
+    <string name="resetBTN">Очистить</string>
+    <string name="exitBTN">Выход</string>
+</resources>
