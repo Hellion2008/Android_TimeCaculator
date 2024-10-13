@@ -79,6 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/resultTV"
+        android:textColor="@color/black"
         android:gravity="center_horizontal"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"

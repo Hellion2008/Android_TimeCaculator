@@ -28,8 +28,7 @@ class Operation(private var first: String, private var second: String) {
     fun changeToSeconds(value: Long) = value % 60
 
     fun isValidTimeFormat(time: String): Boolean {
-        val temp = time.trim().split("h", "m", "s").toList()
-        val parts = arrayOf(temp[0],temp[1], temp[2])
+        val parts = time.trim().split("h", "m", "s").filter { it.isNotEmpty() }.toList()
 
         for (part in parts) {
             if (part.toInt() < 0 || part.toInt() >=60) {

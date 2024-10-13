@@ -1,5 +1,7 @@
 package com.example.timecalculator
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,6 +13,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -70,6 +73,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     "Данные очищены",
                     Toast.LENGTH_LONG
                 ).show()
+                resultTV.setTextColor(Color.BLACK)
+
             }
 
             R.id.exit_menu_main -> {
@@ -84,6 +89,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         return super.onOptionsItemSelected(item)
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onClick(v: View){
 
         if (firstOperandET.text.isEmpty() || secondOperandET.text.isEmpty()){
@@ -107,6 +113,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 "Результат: $result",
                 Toast.LENGTH_LONG
             ).show()
+
+            resultTV.setTextColor(ContextCompat.getColor(this, R.color.resultColor))
         } catch (e: DataFormatEditTextException){
             resultTV.text = e.message
         }
